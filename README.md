@@ -1,2 +1,2 @@
 # fiGUI
-A physics cinematic helper made in python with tkinter.
+A physics kinematic helper made in python with tkinter.
