@@ -1,12 +1,25 @@
 # -*- coding: utf-8 -*-
 from tkinter import *
+import string
 #++++++++++++++++++++++++++++++++++++++++++++++
 # Abaixo colocando os comandos!!!!
 #++++++++++++++++++++++++++++++++++++++++++++++
 #______________________________________________
-def reset():
+m = "Metros"
+r = "Resultado:"
+def lptbr():
 	rslt ['text'] = "Resultado:"
-	root.geometry("500x300")
+	vm ['text'] = "Velocidade Média"
+	reset ['text'] = "Resetar"
+	m = "Metros"
+def le():
+	r = "Result:"
+	rslt ['text'] = r
+	vm ['text'] = "Avagerage Speed"
+	reset ['text'] = "Reset"
+	m = "Meters"
+def reset():
+	rslt ['text'] = r
 def vm():
 	os = se.get()
 	ot = te.get()
@@ -14,7 +27,6 @@ def vm():
 	nt = int(ot)
 	vm = ns / nt 
 	rslt ['text'] = (vm," m/s")
-	root.geometry("500x300")
 def sovt():
 	os = se.get()
 	ov = ve.get()
@@ -23,8 +35,7 @@ def sovt():
 	nv = int(ov)
 	nt = int(ot)
 	x = ns + nv * nt 
-	rslt ['text'] = x," Metros"
-	root.geometry("500x300")
+	rslt ['text'] = x,m
 def torric():					   		
 	ov0 = voe.get()
 	oa = ae.get()
@@ -35,18 +46,27 @@ def torric():
 	y = nv0 * nv0 + 2 * na * ns
 	x = y * 0.5
 	rslt ['text'] = x,"m/s"
-	root.geometry("500x300")
 #+++++++++++++++++++++++++++++++++++++++++++++++
 #Colocando as configuraçoes do mestre |
 #_____________________________________V_________
 #_______________________________________________
 root = Tk()							           
 root.title("Fisicx ALPHA 0.2.5 ")					   
-root.geometry("500x300")					   		
+root.geometry("380x300")					   		
 root ['background'] = "black"            	   	
 fonte = ("Verdana", "8", "bold")
 fonte1 = ("Verdana", "6")
 fonter = ("Times", "16", "bold")		                       
+#________________________________________________
+# Colocando configurançoes dos menus
+#________________________________________________
+menu = Menu(root)
+root.config(menu=menu)
+
+subMenu = Menu(menu, font= fonte, fg="white", bg="black")
+menu.add_cascade(label="Language", menu=subMenu, font= fonte)
+subMenu.add_command(label="Pt-br", command=lptbr, font= fonte)
+subMenu.add_command(label="English", command=le, font= fonte)
 #________________________________________________
 #Colocando as configuraçoes das label |
 #_____________________________________V_________
@@ -100,9 +120,6 @@ rslt.grid(row=0)
 #Abaixo declarando  os botões 		|		 | |		
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~V~~~~~~~~~\|
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||
-cvo = Checkbutton(root, text="M/s", variable=v,font = fonte, fg='white',bg='black')
-cvo.grid(row=1, column=2)
-cvo.var = v
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 sovt = Button(root, text="      Sovt      ", fg="white", bg="black", command=sovt)			
 sovt.grid(row=8, column=1)
@@ -116,8 +133,4 @@ vm.grid(row=8, column=2)
 reset = Button(root, text="Resetar", fg="black", bg="#00FFFF", command=reset)
 reset.grid(row="99", column=1)
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\/\/\/\/\/\/\/\/\/\/\/\/
-cv = Checkbutton(root, text="M/s", variable=vo, font = fonte, fg='white',bg='black')
-cv.grid(row=5, column=2)
-cv.var = vo
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 root.mainloop()
