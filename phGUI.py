@@ -18,6 +18,8 @@ def le():
 	vm ['text'] = "Avagerage Speed"
 	reset ['text'] = "Reset"
 	m = "Meters"
+	sde ['text'] = "Meters"
+	tde ['text'] = "Seconds"
 def reset():
 	rslt ['text'] = r
 def vm():
@@ -74,13 +76,25 @@ vo = Label(root,text="Vo:",fg="white",bg="black", font = fonte)
 a = Label(root,text="A:",fg="white",bg="black", font = fonte)		
 s = Label(root,text="S:",fg="white",bg="black", font = fonte)	
 t = Label(root,text="T:",fg="white",bg="black", font = fonte)	
-v = Label(root,text="V:",fg="white",bg="black", font = fonte)	
+v = Label(root,text="V:",fg="white",bg="black", font = fonte)
+#
+vode = Label(root,text="M/s ",fg="white",bg="black", font = fonte)	
+ade = Label(root,text="M/s ",fg="white",bg="black", font = fonte)
+sde = Label(root,text="Metros",fg="white",bg="black", font = fonte)
+tde = Label(root,text="Segundos ",fg="white",bg="black", font = fonte)
+vde = Label(root,text="M/s ",fg="white",bg="black", font = fonte)
+
 ################################################
-vo.grid(row=1)								   #			
-a.grid(row=2)								   #		
-s.grid(row=3)								   #		
-t.grid(row=4)								   #	
-v.grid(row=5)								   #	 
+vo.grid(row=1)								   
+a.grid(row=2)								   
+s.grid(row=3)								   
+t.grid(row=4)								   
+v.grid(row=5)		
+vode.grid(row=1, column=2)
+ade.grid(row=2, column=2)
+sde.grid(row=3, column=2)
+tde.grid(row=4, column=2)
+vde.grid(row=5, column=2)						   
 #+++++++++++++++++++++++++++++++++++++++++++++++
 #Colocando as configuraçoes das entradas |
 #________________________________________V______
@@ -114,7 +128,7 @@ ve.grid(row=5, column=1)
 rslt = Label(root, text="  Resultado:   ",font = fonter, fg="red", bg="black")         		  
 rslt.grid(row=0)							   		
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~		
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\________________________/
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~/|     
 #Abaixo declarando  os botões 		|		 | |		
