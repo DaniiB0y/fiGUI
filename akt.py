@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tkinter import *
 import os
 import string
@@ -9,39 +10,37 @@ colorsf = ['#000','#3F3939','#23110C','#001036']
 c = random.choice(colors)
 cf = random.choice(colorsf)
 ce = cf
+def cinematica():
+	print ('Its working')
 def dinamica():
-	vode.destroy()
-	ade.destroy()
-	sde.destroy()
-	tde.destroy()
-	vde.destroy()
-	soe.destroy()
-	ge.destroy()
-	vo.destroy()
-	a.destroy()
-	s.destroy()
-	t.destroy()
-	v.destroy()
-	so.destroy()
-	g.destroy()
-	voe.destroy()
-	ae.destroy()
-	se.destroy()
-	te.destroy()
-	ve.destroy()
-	so.destroy()
-	ge.destroy()
-	sovt.destroy()
-	calc.destroy()
-	vm.destroy()
-	reset.destroy()
-	am.destroy()
-	eqhe.destroy()
-	t.destroy()
-	voat.destroy()
-	t.destroy()
-	so.destroy()
-	ge.destroy()
+	root.destroy()
+	# New "class"
+	x = "800x300"
+	new = Tk()							           
+	new.title("Akt 1.0")					   
+	new.geometry(x)	
+	ox = new.geometry(x)		 
+	new.resizable(False, False) 		
+	new ['background'] = cf            	   	
+	fonte = ("Times", "8", "roman")
+	fonte1 = ("Times", "10", "italic")
+	fonter = ("Times", "16", "roman")
+	fontem = ("Verdana", "8", "roman")
+	# Now is just config some other things
+	menu = Menu(new)
+	new.config(menu=menu)
+	subMenu = Menu(menu, font=fontem, fg="black",bg="light gray")
+	menu.add_cascade(label="Options", menu=subMenu,font=fontem)
+	subMenu.add_command(label="Pt-br", command=lptbr,font=fontem)
+	subMenu.add_command(label="English", command=le,font=fontem)
+	subMenu.add_separator()
+	subMenu.add_command(label="Help", command=helm,font=fontem)
+	subMenu.add_separator()
+	subMenu.add_command(label="Fisica Cinematica", command=cinematica,font=fontem)
+	#
+	rslt = Label(new, text="0 = 0",font = fonter, fg=c, bg=cf)         		  
+	rslt.grid(row=0)
+	#
 def helm():
 	os.system('notepad help.txt' if os.name == 'nt' else 'nano help.txt')
 def vovat():
@@ -84,8 +83,7 @@ def lptbr():
 	sde ['text'] = "Metros"
 	tde ['text'] = "Segundos"
 	x = "800x300"
-	root.geometry(x)	
-	
+	root.geometry(x)		
 def le():
 	r = "0 = 0:"
 	rslt ['text'] = r
