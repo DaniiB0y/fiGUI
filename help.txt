@@ -1,5 +1,5 @@
 S = Space
-V = Velocity
+V = Speed
 T = Time
 G = Gravity
 Vo = Initial Speed
