@@ -1,0 +1,17 @@
+S = Space
+V = Velocity
+T = Time
+G = Gravity
+Vo = Initial Speed
+So = Initial Space
+A = Aceleration
+-------------------
+Portuguese
+-------------------
+S = Espaço
+V = Velocidade
+T = Tempo
+G = Gravidade
+Vo = Velocidade Inicial
+So = Espaço Inicial
+A  = Aceleção
